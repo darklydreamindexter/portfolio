@@ -57,6 +57,15 @@
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
     }
 
+    .hero-intro-letter {
+      display: inline-block;
+      transition: transform 0.35s ease;
+    }
+    .stick-letter {
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      will-change: transform;
+    }
+
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -179,10 +188,10 @@
 <!-- Main Content -->
 <div class="max-w-5xl w-full z-10 relative pl-4 md:pl-20">
 <h1 class="text-[15vw] md:text-[11rem] lg:text-[12.5rem] font-bold leading-[0.85] tracking-tighter">
-<span class="text-gray-400 block">edits that</span>
+<span class="text-gray-400 block"><span class="hero-intro-letter" data-idx="0" data-color="#9ca3af">e</span><span class="hero-intro-letter" data-idx="1" data-color="#9ca3af">d</span><span class="hero-intro-letter" data-idx="2" data-color="#9ca3af">i</span><span class="hero-intro-letter" data-idx="3" data-color="#9ca3af">t</span><span class="hero-intro-letter" data-idx="4" data-color="#9ca3af">s</span><span class="hero-intro-letter" data-idx="5" data-color="#9ca3af">&nbsp;</span><span class="hero-intro-letter" data-idx="6" data-color="#9ca3af">t</span><span class="hero-intro-letter" data-idx="7" data-color="#9ca3af">h</span><span class="hero-intro-letter" data-idx="8" data-color="#9ca3af">a</span><span class="hero-intro-letter" data-idx="9" data-color="#9ca3af">t</span></span>
 <span class="text-white block">
-<span class="group/stick cursor-default">
-<span class="hover-letter transition-transform duration-300 group-hover/stick:-translate-y-1 text-pink-400">s</span><span class="hover-letter transition-transform duration-300 group-hover/stick:-translate-y-2 text-sky-400">t</span><span class="hover-letter transition-transform duration-300 group-hover/stick:-translate-y-1 text-yellow-400">i</span><span class="hover-letter transition-transform duration-300 group-hover/stick:-translate-y-2 text-green-500">c</span><span class="hover-letter transition-transform duration-300 group-hover/stick:-translate-y-1 text-blue-500">k</span><span class="hover-letter transition-transform duration-300 group-hover/stick:-translate-y-2 text-orange-400">.</span>
+<span class="group/stick cursor-default" id="stick-word">
+<span class="hero-intro-letter stick-letter" data-idx="10" data-color="#ff6fa5">s</span><span class="hero-intro-letter stick-letter" data-idx="11" data-color="#38bdf8">t</span><span class="hero-intro-letter stick-letter" data-idx="12" data-color="#facc15">i</span><span class="hero-intro-letter stick-letter" data-idx="13" data-color="#22c55e">c</span><span class="hero-intro-letter stick-letter" data-idx="14" data-color="#3b82f6">k</span><span class="hero-intro-letter stick-letter" data-idx="15" data-color="#fb923c">.</span>
 </span>
 </span>
 </h1>
@@ -402,6 +411,60 @@
 <!-- END: Footer -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Hero intro: each letter flashes a color, then settles into its normal look
+    const introLetters = document.querySelectorAll('.hero-intro-letter');
+    const flashPalette = ['#ff6fa5', '#38bdf8', '#facc15', '#22c55e', '#3b82f6', '#fb923c', '#a78bfa', '#f472b6', '#2dd4bf', '#f87171'];
+    introLetters.forEach((el, i) => {
+      const flashColor = flashPalette[i % flashPalette.length];
+      const finalColor = el.dataset.color || '#ffffff';
+      el.style.opacity = '0';
+      const anim = el.animate(
+        [
+          { opacity: 0, color: flashColor, transform: 'translateY(18px)' },
+          { opacity: 1, color: flashColor, transform: 'translateY(0)', offset: 0.55 },
+          { opacity: 1, color: finalColor, transform: 'translateY(0)' }
+        ],
+        { duration: 700, delay: i * 55, easing: 'ease-out', fill: 'both' }
+      );
+      anim.onfinish = () => {
+        anim.cancel();
+        el.style.opacity = '1';
+        el.style.color = finalColor;
+        el.style.transform = '';
+      };
+    });
+
+    // "stick." reacts to the mouse — subtle, letters shift with the cursor
+    const stickWord = document.getElementById('stick-word');
+    if (stickWord) {
+      const stickLetters = stickWord.querySelectorAll('.stick-letter');
+      const STICK_RADIUS = 100;
+      window.addEventListener('mousemove', (e) => {
+        stickLetters.forEach((letter) => {
+          const rect = letter.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          const dx = e.clientX - cx;
+          const dy = e.clientY - cy;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < STICK_RADIUS) {
+            const influence = 1 - dist / STICK_RADIUS;
+            const lift = influence * 22;
+            const scale = 1 + influence * 0.15;
+            const tilt = (dx / STICK_RADIUS) * influence * 10;
+            letter.style.transform = `translateY(-${lift}px) scale(${scale}) rotate(${tilt}deg)`;
+          } else {
+            letter.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+          }
+        });
+      });
+      stickWord.addEventListener('mouseleave', () => {
+        stickLetters.forEach((letter) => {
+          letter.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+        });
+      });
+    }
+
     // Existing simple reveals
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
