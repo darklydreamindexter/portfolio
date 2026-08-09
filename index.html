@@ -80,17 +80,24 @@
     }
 
     @keyframes scroll-left {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .carousel-track {
-      animation: scroll-left 40s linear infinite;
-      display: flex;
-      width: max-content;
-    }
-    .carousel-track:hover {
-      animation-play-state: paused;
-    }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.carousel-track {
+  animation: scroll-left 40s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
 
     
     /* Text Hover Animation */
@@ -283,49 +290,140 @@
   <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors pointer-events-none"></div>
 </div>
 <!-- Vertical Video Carousel -->
-<div class="mt-24 overflow-hidden relative w-full rounded-2xl">
-<!-- Gradient Masks -->
-<div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#141414] to-transparent z-10 pointer-events-none"></div>
-<div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#141414] to-transparent z-10 pointer-events-none"></div>
-<div class="carousel-track gap-6">
-<!-- Set 1 -->
-<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/4JlHMbHoqAA?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=4JlHMbHoqAA&amp;controls=0"></iframe>
-</div>
-<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/SvyWHRziNHI?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=SvyWHRziNHI&amp;controls=0"></iframe>
-</div>
-<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/2M6fshnFldM?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=2M6fshnFldM&amp;controls=0"></iframe>
-</div>
-<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/U4PtQlL5obU?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=U4PtQlL5obU&amp;controls=0"></iframe>
-</div>
-<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/HzS5WQUTPB0?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=HzS5WQUTPB0&amp;controls=0"></iframe>
-</div>
-<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/L-Z8YGKUenc?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=L-Z8YGKUenc&amp;controls=0"></iframe>
-</div>
-<!-- Set 2 (Duplicate for infinite scroll loop) -->
-<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/4JlHMbHoqAA?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=4JlHMbHoqAA&amp;controls=0"></iframe>
-</div>
-<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/SvyWHRziNHI?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=SvyWHRziNHI&amp;controls=0"></iframe>
-</div>
-<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/2M6fshnFldM?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=2M6fshnFldM&amp;controls=0"></iframe>
-</div>
-<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/U4PtQlL5obU?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=U4PtQlL5obU&amp;controls=0"></iframe>
-</div>
-<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/HzS5WQUTPB0?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=HzS5WQUTPB0&amp;controls=0"></iframe>
-</div>
-<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/L-Z8YGKUenc?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=L-Z8YGKUenc&amp;controls=0"></iframe>
-</div>
+<div class="mt-24 max-w-6xl mx-auto overflow-hidden relative w-full rounded-2xl">
+
+  <!-- Gradient Masks -->
+  <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#141414] to-transparent z-10 pointer-events-none"></div>
+  <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#141414] to-transparent z-10 pointer-events-none"></div>
+
+  <div class="carousel-track gap-5">
+
+    <!-- Set 1 -->
+
+    <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+      <iframe
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        class="w-full h-full pointer-events-none"
+        frameborder="0"
+        src="https://www.youtube.com/embed/4JlHMbHoqAA?autoplay=1&mute=1&loop=1&playlist=4JlHMbHoqAA&controls=0&playsinline=1">
+      </iframe>
+    </div>
+
+    <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+      <iframe
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        class="w-full h-full pointer-events-none"
+        frameborder="0"
+        src="https://www.youtube.com/embed/SvyWHRziNHI?autoplay=1&mute=1&loop=1&playlist=SvyWHRziNHI&controls=0&playsinline=1">
+      </iframe>
+    </div>
+
+    <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+      <iframe
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        class="w-full h-full pointer-events-none"
+        frameborder="0"
+        src="https://www.youtube.com/embed/2M6fshnFldM?autoplay=1&mute=1&loop=1&playlist=2M6fshnFldM&controls=0&playsinline=1">
+      </iframe>
+    </div>
+
+    <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+      <iframe
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        class="w-full h-full pointer-events-none"
+        frameborder="0"
+        src="https://www.youtube.com/embed/U4PtQlL5obU?autoplay=1&mute=1&loop=1&playlist=U4PtQlL5obU&controls=0&playsinline=1">
+      </iframe>
+    </div>
+
+    <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+      <iframe
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        class="w-full h-full pointer-events-none"
+        frameborder="0"
+        src="https://www.youtube.com/embed/HzS5WQUTPB0?autoplay=1&mute=1&loop=1&playlist=HzS5WQUTPB0&controls=0&playsinline=1">
+      </iframe>
+    </div>
+
+    <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+      <iframe
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        class="w-full h-full pointer-events-none"
+        frameborder="0"
+        src="https://www.youtube.com/embed/L-Z8YGKUenc?autoplay=1&mute=1&loop=1&playlist=L-Z8YGKUenc&controls=0&playsinline=1">
+      </iframe>
+    </div>
+
+
+    <!-- Set 2 - Duplicate for infinite loop -->
+
+    <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+      <iframe
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        class="w-full h-full pointer-events-none"
+        frameborder="0"
+        src="https://www.youtube.com/embed/4JlHMbHoqAA?autoplay=1&mute=1&loop=1&playlist=4JlHMbHoqAA&controls=0&playsinline=1">
+      </iframe>
+    </div>
+
+    <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+      <iframe
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        class="w-full h-full pointer-events-none"
+        frameborder="0"
+        src="https://www.youtube.com/embed/SvyWHRziNHI?autoplay=1&mute=1&loop=1&playlist=SvyWHRziNHI&controls=0&playsinline=1">
+      </iframe>
+    </div>
+
+    <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+      <iframe
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        class="w-full h-full pointer-events-none"
+        frameborder="0"
+        src="https://www.youtube.com/embed/2M6fshnFldM?autoplay=1&mute=1&loop=1&playlist=2M6fshnFldM&controls=0&playsinline=1">
+      </iframe>
+    </div>
+
+    <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+      <iframe
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        class="w-full h-full pointer-events-none"
+        frameborder="0"
+        src="https://www.youtube.com/embed/U4PtQlL5obU?autoplay=1&mute=1&loop=1&playlist=U4PtQlL5obU&controls=0&playsinline=1">
+      </iframe>
+    </div>
+
+    <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+      <iframe
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        class="w-full h-full pointer-events-none"
+        frameborder="0"
+        src="https://www.youtube.com/embed/HzS5WQUTPB0?autoplay=1&mute=1&loop=1&playlist=HzS5WQUTPB0&controls=0&playsinline=1">
+      </iframe>
+    </div>
+
+    <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+      <iframe
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        class="w-full h-full pointer-events-none"
+        frameborder="0"
+        src="https://www.youtube.com/embed/L-Z8YGKUenc?autoplay=1&mute=1&loop=1&playlist=L-Z8YGKUenc&controls=0&playsinline=1">
+      </iframe>
+    </div>
+
+  </div>
 </div>
 </div>
 </div>
