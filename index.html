@@ -28,10 +28,14 @@
     .shape-3 { animation-delay: 2s; }
     .shape-4 { animation-delay: 3s; }
     
-    @keyframes float-tech {
-      0%, 100% { transform: translateY(0) rotate(var(--rot)); }
-      50% { transform: translateY(-15px) rotate(var(--rot)); }
-    }
+    html {
+  scroll-behavior: smooth;
+}
+
+@keyframes float-tech {
+  0%, 100% { transform: translateY(0) rotate(var(--rot)); }
+  50% { transform: translateY(-15px) rotate(var(--rot)); }
+}
     .tech-wrapper {
       animation: float-tech 5s ease-in-out infinite;
       animation-delay: var(--delay);
