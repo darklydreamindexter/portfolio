@@ -28,14 +28,10 @@
     .shape-3 { animation-delay: 2s; }
     .shape-4 { animation-delay: 3s; }
     
-    html {
-  scroll-behavior: smooth;
-}
-
-@keyframes float-tech {
-  0%, 100% { transform: translateY(0) rotate(var(--rot)); }
-  50% { transform: translateY(-15px) rotate(var(--rot)); }
-}
+    @keyframes float-tech {
+      0%, 100% { transform: translateY(0) rotate(var(--rot)); }
+      50% { transform: translateY(-15px) rotate(var(--rot)); }
+    }
     .tech-wrapper {
       animation: float-tech 5s ease-in-out infinite;
       animation-delay: var(--delay);
@@ -80,25 +76,17 @@
     }
 
     @keyframes scroll-left {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(calc(-50% - 10px));
-  }
-}
-
-.carousel-track {
-  display: flex;
-  width: max-content;
-  animation: scroll-left 40s linear infinite;
-  will-change: transform;
-}
-
-.carousel-track:hover {
-  animation-play-state: paused;
-}
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .carousel-track {
+      animation: scroll-left 40s linear infinite;
+      display: flex;
+      width: max-content;
+    }
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
 
     
     /* Text Hover Animation */
@@ -267,161 +255,60 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8"><!-- Project 1 -->
 <div class="bg-black rounded-3xl overflow-hidden shadow-2xl group hover:scale-[1.02] transition-transform duration-300 border border-gray-800 aspect-video relative">
-  <iframe
-    src="https://www.youtube.com/embed/lVHBWoxykLM?autoplay=1&mute=1&loop=1&playlist=lVHBWoxykLM&controls=0&modestbranding=1&rel=0&playsinline=1"
-    class="w-full h-full pointer-events-none"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-  </iframe>
-
-  <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors pointer-events-none"></div>
+<iframe '*')"="" allow="autoplay; encrypted-media" class="w-full h-full pointer-events-none" event\":\"command\",\"func\":\"pausevideo\",\"args\":\"\"}',="" event\":\"command\",\"func\":\"playvideo\",\"args\":\"\"}',="" frameborder="0" onmouseenter="this.contentWindow.postMessage('{\" onmouseleave="this.contentWindow.postMessage('{\" src="https://www.youtube.com/embed/lVHBWoxykLM?enablejsapi=1&amp;mute=1&amp;controls=0&amp;modestbranding=1&amp;rel=0">
+</iframe>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors pointer-events-none"></div>
 </div>
-
 <!-- Project 2 -->
 <div class="bg-black rounded-3xl overflow-hidden shadow-2xl group hover:scale-[1.02] transition-transform duration-300 border border-gray-800 aspect-video relative">
-  <iframe
-    src="https://www.youtube.com/embed/bSBQhyYyMH4?autoplay=1&mute=1&loop=1&playlist=bSBQhyYyMH4&controls=0&modestbranding=1&rel=0&playsinline=1"
-    class="w-full h-full pointer-events-none"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-  </iframe>
-
-  <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors pointer-events-none"></div>
-</div>
+<iframe '*')"="" allow="autoplay; encrypted-media" class="w-full h-full pointer-events-none" event\":\"command\",\"func\":\"pausevideo\",\"args\":\"\"}',="" event\":\"command\",\"func\":\"playvideo\",\"args\":\"\"}',="" frameborder="0" onmouseenter="this.contentWindow.postMessage('{\" onmouseleave="this.contentWindow.postMessage('{\" src="https://www.youtube.com/embed/bSBQhyYyMH4?enablejsapi=1&amp;mute=1&amp;controls=0&amp;modestbranding=1&amp;rel=0">
+</iframe>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors pointer-events-none"></div>
+</div></div>
 <!-- Vertical Video Carousel -->
-<div class="mt-24 max-w-6xl mx-auto overflow-hidden relative w-full rounded-2xl">
-
-  <!-- Gradient Masks -->
-  <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#141414] to-transparent z-10 pointer-events-none"></div>
-
-  <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#141414] to-transparent z-10 pointer-events-none"></div>
-
-  <div class="carousel-track">
-
-    <!-- SET 1 -->
-    <div class="carousel-set flex gap-5">
-
-      <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-        <iframe
-          class="w-full h-full pointer-events-none"
-          src="https://www.youtube.com/embed/4JlHMbHoqAA?autoplay=1&mute=1&loop=1&playlist=4JlHMbHoqAA&controls=0&playsinline=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-        <iframe
-          class="w-full h-full pointer-events-none"
-          src="https://www.youtube.com/embed/SvyWHRziNHI?autoplay=1&mute=1&loop=1&playlist=SvyWHRziNHI&controls=0&playsinline=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-        <iframe
-          class="w-full h-full pointer-events-none"
-          src="https://www.youtube.com/embed/2M6fshnFldM?autoplay=1&mute=1&loop=1&playlist=2M6fshnFldM&controls=0&playsinline=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-        <iframe
-          class="w-full h-full pointer-events-none"
-          src="https://www.youtube.com/embed/U4PtQlL5obU?autoplay=1&mute=1&loop=1&playlist=U4PtQlL5obU&controls=0&playsinline=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-        <iframe
-          class="w-full h-full pointer-events-none"
-          src="https://www.youtube.com/embed/HzS5WQUTPB0?autoplay=1&mute=1&loop=1&playlist=HzS5WQUTPB0&controls=0&playsinline=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-        <iframe
-          class="w-full h-full pointer-events-none"
-          src="https://www.youtube.com/embed/L-Z8YGKUenc?autoplay=1&mute=1&loop=1&playlist=L-Z8YGKUenc&controls=0&playsinline=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-    </div>
-
-    <!-- SET 2 - DUPLICATE -->
-    <div class="carousel-set flex gap-5 ml-5">
-
-      <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-        <iframe class="w-full h-full pointer-events-none"
-          src="https://www.youtube.com/embed/4JlHMbHoqAA?autoplay=1&mute=1&loop=1&playlist=4JlHMbHoqAA&controls=0&playsinline=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media">
-        </iframe>
-      </div>
-
-      <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-        <iframe class="w-full h-full pointer-events-none"
-          src="https://www.youtube.com/embed/SvyWHRziNHI?autoplay=1&mute=1&loop=1&playlist=SvyWHRziNHI&controls=0&playsinline=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media">
-        </iframe>
-      </div>
-
-      <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-        <iframe class="w-full h-full pointer-events-none"
-          src="https://www.youtube.com/embed/2M6fshnFldM?autoplay=1&mute=1&loop=1&playlist=2M6fshnFldM&controls=0&playsinline=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media">
-        </iframe>
-      </div>
-
-      <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-        <iframe class="w-full h-full pointer-events-none"
-          src="https://www.youtube.com/embed/U4PtQlL5obU?autoplay=1&mute=1&loop=1&playlist=U4PtQlL5obU&controls=0&playsinline=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media">
-        </iframe>
-      </div>
-
-      <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-        <iframe class="w-full h-full pointer-events-none"
-          src="https://www.youtube.com/embed/HzS5WQUTPB0?autoplay=1&mute=1&loop=1&playlist=HzS5WQUTPB0&controls=0&playsinline=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media">
-        </iframe>
-      </div>
-
-      <div class="w-[180px] md:w-[190px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-        <iframe class="w-full h-full pointer-events-none"
-          src="https://www.youtube.com/embed/L-Z8YGKUenc?autoplay=1&mute=1&loop=1&playlist=L-Z8YGKUenc&controls=0&playsinline=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media">
-        </iframe>
-      </div>
-
-    </div>
-
-  </div>
+<div class="mt-24 overflow-hidden relative w-full rounded-2xl">
+<!-- Gradient Masks -->
+<div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#141414] to-transparent z-10 pointer-events-none"></div>
+<div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#141414] to-transparent z-10 pointer-events-none"></div>
+<div class="carousel-track gap-6">
+<!-- Set 1 -->
+<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/4JlHMbHoqAA?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=4JlHMbHoqAA&amp;controls=0"></iframe>
 </div>
-
-  </div>
+<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/SvyWHRziNHI?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=SvyWHRziNHI&amp;controls=0"></iframe>
+</div>
+<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/2M6fshnFldM?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=2M6fshnFldM&amp;controls=0"></iframe>
+</div>
+<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/U4PtQlL5obU?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=U4PtQlL5obU&amp;controls=0"></iframe>
+</div>
+<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/HzS5WQUTPB0?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=HzS5WQUTPB0&amp;controls=0"></iframe>
+</div>
+<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/L-Z8YGKUenc?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=L-Z8YGKUenc&amp;controls=0"></iframe>
+</div>
+<!-- Set 2 (Duplicate for infinite scroll loop) -->
+<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/4JlHMbHoqAA?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=4JlHMbHoqAA&amp;controls=0"></iframe>
+</div>
+<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/SvyWHRziNHI?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=SvyWHRziNHI&amp;controls=0"></iframe>
+</div>
+<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/2M6fshnFldM?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=2M6fshnFldM&amp;controls=0"></iframe>
+</div>
+<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/U4PtQlL5obU?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=U4PtQlL5obU&amp;controls=0"></iframe>
+</div>
+<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/HzS5WQUTPB0?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=HzS5WQUTPB0&amp;controls=0"></iframe>
+</div>
+<div class="w-[280px] flex-shrink-0 aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" class="w-full h-full pointer-events-none" frameborder="0" src="https://www.youtube.com/embed/L-Z8YGKUenc?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=L-Z8YGKUenc&amp;controls=0"></iframe>
+</div>
 </div>
 </div>
 </div>
